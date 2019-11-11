@@ -26,8 +26,9 @@ export default {
 
 <style scoped>
 .header {
-  z-index: 1;
+  z-index: 100;
   position: fixed;
+  top: 0;
   width: 100%;
   height: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);

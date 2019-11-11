@@ -1,11 +1,24 @@
 <template>
   <section>
-    <h1>Home Page</h1>
+    <TheHero />
+    <ProductList :products="loadedProducts" />
   </section>
 </template>
 
 <script>
-export default {}
+import TheHero from '@/components/TheHero/TheHero'
+import ProductList from '@/components/Products/ProductList'
+export default {
+  components: {
+    TheHero,
+    ProductList
+  },
+  computed: {
+    loadedProducts() {
+      return this.$store.getters.loadedProducts
+    }
+  }
+}
 </script>
 
 <style>
