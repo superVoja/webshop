@@ -1,19 +1,25 @@
 <template>
-  <figure>
-    <img src alt />
-    <h2>{{ name }}</h2>
-    <p>{{ price}}</p>
-  </figure>
+  <nuxt-link :to="'/products/' + id">
+    <figure class="poduct-preview">
+      <p class="product-price">{{ price | toUSD}}</p>
+      <img src="@/assets/images/prod-04.jpg" class="product-img" alt />
+      <h2 class="product-title">{{ title }}</h2>
+    </figure>
+  </nuxt-link>
 </template>
 <script>
 export default {
   name: 'Product',
   props: {
-    name: {
+    id: {
       type: String,
       required: true
     },
-    id: {
+    title: {
+      type: String,
+      required: true
+    },
+    thumbnail: {
       type: String,
       required: true
     },
@@ -27,46 +33,33 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
-  color: #000;
+  color: grey;
 }
-
-.post-preview {
+.product-preview {
   margin: 25px 0 25px 0;
   padding: 12px;
-  background: #1e1e1e;
   transition: all 200ms;
   display: flex;
   flex-direction: column;
   max-height: 40rem;
 }
-.post-preview:hover {
-  transform: translateY(-6px);
-  transition: all 200ms;
-}
-.post-preview-thumbnail {
-  width: 100%;
-  height: 100%;
-  margin: 0 0 30px 0;
-  object-fit: contain;
-}
-.post-preview img {
-  height: 100%;
-  width: 100%;
-}
-
-.post-preview h2 {
-  text-align: center;
-  color: #fff;
-  font-size: 14px;
+.product-price {
+  font-family: 'Larsseit';
+  font-weight: 300;
   text-transform: uppercase;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  letter-spacing: 2px;
+  font-size: 12px;
 }
-.post-preview p {
-  color: #d3d3d3;
-  text-align: center;
+.product-img {
+  width: 100%;
 }
-
+.product-title {
+  font-family: 'Larsseit';
+  color: grey;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 300;
+}
 @media (min-width: 35rem) {
 }
 </style>

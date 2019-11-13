@@ -39,4 +39,7 @@ body {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
 }
+.main-container {
+  margin-top: 60px;
+}
 </style>

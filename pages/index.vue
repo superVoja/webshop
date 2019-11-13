@@ -1,8 +1,12 @@
 <template>
-  <section>
-    <TheHero />
-    <ProductList :products="loadedProducts" />
-  </section>
+  <div>
+    <section>
+      <TheHero />
+    </section>
+    <section class="product-list">
+      <ProductList :products="loadedProducts" />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -21,5 +25,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.product-list {
+  padding: 80px 40px;
+}
 </style>

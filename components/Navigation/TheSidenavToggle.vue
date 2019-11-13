@@ -9,5 +9,6 @@
   position: absolute;
   line-height: 60px;
   left: 1.4em;
+  cursor: pointer;
 }
 </style>

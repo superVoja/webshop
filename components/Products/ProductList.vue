@@ -1,11 +1,13 @@
 <template>
-  <section>
+  <section class="product-list">
     <Product
       v-for="product in products"
       :key="product.id"
       :id="product.id"
-      :name="product.name"
+      :thumbnail="product.thumbnail"
+      :title="product.title"
       :price="product.price"
+      class="product"
     />
   </section>
 </template>
@@ -24,9 +26,11 @@ export default {
 }
 </script>
 <style scoped>
-.post-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-gap: 1rem;
+.product-list {
+  display: flex;
+}
+.product {
+  flex-basis: 25%;
+  max-width: 25%;
 }
 </style>
